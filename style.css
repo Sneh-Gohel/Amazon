@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    font-family: Arial;
+    border: border-box;
+}
+
+/* Navigation Bar */
+.nav {
+    height: 60px;
+    background-color: #0f1111;
+    display: flex;
+    justify-content: space-evenly; /* Even space between items */
+    align-items: center; /* Center items vertically */
+    color: #ffffff;
+}
+
+
+/* Navigation Bar Logo */
+.nav_logo {
+    width: 130px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: 100%;
+    background-image: url("assets/images/logo.png"); /* Verify this path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Deliver box */
+
+.deliver-box {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.deliver-icon {
+    margin-top: 10px;
+}
+
+.deliver-text {
+    margin-left: 5px;
+}
+
+.add1 {
+    font-size: 0.75rem;
+    color: #cccccc;
+}
+
+.add2 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Navigation search box */
+
+.nav-search {
+    padding: 10px;
+    width: 500px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.selection {
+    padding-left: 10px;
+    height: 100%;
+    width: 45px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+    background-color: #E6E6E6;
+}
+
+.search {
+    height: 100%; /* Matches the parent's height */
+    width: 100%; /* Takes up the remaining available width */
+    border: none;
+}
+
+.search input {
+    height: 100%; /* Ensures the input matches the container's height */
+    width: 100%; /* Fills the entire container's width */
+    padding: 0 10px; /* Adds padding for better spacing */
+    border: none; /* Removes default border */
+    outline: none; /* Removes the blue border when focused */
+    box-sizing: border-box; /* Prevents padding from affecting dimensions */
+    font-size: 1rem;
+}
+
+.search-icon {
+    height: 100%;
+    width: 45px;
+    background-color: #febd68;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navigation bar account info */
+
+.nav-account_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-account_info-first-line {
+    font-size: 0.75rem;
+}
+.nav-account_info-second-line {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* Navigation bar return info */
+
+.nav-return-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-return-info-first-line {
+    font-size: 0.75rem;
+}
+.nav-return-info-second-line {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* Navigation bar cart */
+
+.cart {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.cart i {
+    font-size: 30px;
+}
+
+/* Box border with hover effect */
+
+.border {
+    height: 95%;
+    border: 2px solid transparent;
+}
+
+.border:hover {
+    border: 2px solid white;
+}
