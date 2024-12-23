@@ -5,13 +5,19 @@
 }
 
 /* Navigation Bar */
+/* Navigation Bar */
 .nav {
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Ensures it sticks to the top */
+    left: 0; /* Aligns to the left edge */
+    width: 100%; /* Spans the full width of the screen */
     height: 60px;
     background-color: #0f1111;
     display: flex;
-    justify-content: space-evenly; /* Even space between items */
-    align-items: center; /* Center items vertically */
+    justify-content: space-evenly;
+    align-items: center;
     color: #ffffff;
+    z-index: 1000; /* Ensures it stays above all other elements */
 }
 
 
@@ -20,15 +26,17 @@
     width: 130px;
     display: flex;
     align-items: center;
+    filter: color-burn;
 }
 
 .logo {
     height: 50px;
     width: 100%;
-    background-image: url("assets/images/logo.png"); /* Verify this path */
+    background-image: url("assets/images/logo.png"); /* Verify the path */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    mix-blend-mode: lighten; /* Blends black with lighter background */
 }
 
 /* Deliver box */
@@ -164,12 +172,15 @@
 /* sub navigation's all option */
 
 .sub-navigation-pannel {
+    margin-top: 60px; /* Adds space below the fixed navbar */
     height: 40px;
     background-color: #232f3e;
     display: flex;
     align-items: center;
     color: white;
+    z-index: 999; /* Ensure it stays below the navbar */
 }
+
 
 .sub-navigation-pannel p{
     margin: 5px;
@@ -209,21 +220,93 @@
     cursor:pointer
 }
 
-/* Hero Tag */
-
+/* Hero Section */
 .hero {
     background-image: 
-        linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%,rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 1) 100%), 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 1) 100%), 
         url("assets/images/hero_img.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
     height: 600px;
+    position: relative; /* Keeps it in the document flow */
+    z-index: 1; /* Ensures it's behind content */
+}
+
+/* Content Section */
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute; /* Overlaps the hero section */
+    top: calc(600px * 0.6); /* Starts after 40% of the hero height */
+    left: 50%; /* Centers the content horizontally */
+    transform: translateX(-50%); /* Adjusts for perfect centering */
+    z-index: 2;
+    margin-bottom: 100px;
 }
 
 /* Content Boxes */
-
-.box1 {
-    background-image: url();
+.content-box {
+    width: 23%; /* Adjust for desired size */
+    height: 420px; /* Fixed height */
+    background-color: white; /* White background */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Items start from the top */
+    padding: 20px; /* Adds internal spacing */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border-radius: 8px; /* Optional rounded corners */
+    box-sizing: border-box; /* Ensures padding doesn't affect size */
+    overflow: hidden; /* Prevents content overflow */
 }
+
+/* h2 Tag */
+.content-box h2 {
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold;
+    color: #333; /* Dark text for contrast */
+    margin-bottom: 10px; /* Space below heading */
+    text-align: left; /* Align text to the left */
+}
+
+/* Content Image */
+.content-box .content-iamge {
+    height: 80%; /* Set specific height for the image container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Adds spacing below the image */
+}
+
+.content-box .content-iamge img {
+    width: 100%; /* Ensure the image scales to fit the container */
+    height: 100%; /* Maintain height within the container */
+    object-fit: contain; /* Ensures the entire image is visible without cropping */
+    border-radius: 4px; /* Optional: Rounded image edges */
+    filter: color-burn;
+}
+
+
+/* Anchor Tag */
+.content-box a {
+    text-decoration: none; /* Remove underline */
+    font-size: 0.9rem;
+    color: #007185; /* Amazon-like blue */
+    font-weight: bold;
+    margin-top: auto; /* Pushes the anchor tag to the bottom */
+    text-align: left; /* Align text to the left */
+}
+
+/* Add Extra Space to the Page */
+body {
+    padding-bottom: 100px; /* Adds space below the content for a complete look */
+}
+
+.content-box:hover {
+    box-shadow: 0px 4px 6px #007185;
+    cursor: pointer;
+}
+
