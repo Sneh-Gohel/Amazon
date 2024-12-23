@@ -310,3 +310,108 @@ body {
     cursor: pointer;
 }
 
+/* Product Slider Container */
+
+.product-slider {
+    margin-top: 100px;
+    width: 96%;
+    padding: 20px;
+    background-color: white; /* Light background for contrast */
+    position: relative; /* Ensure positioning context for buttons */
+}
+
+.product-slider h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Dark text for visibility */
+}
+
+/* Product Container (Horizontal Scroll) */
+.product-container {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 20px; /* Adds spacing between products */
+    padding: 10px 0;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+/* Hide Default Scrollbar */
+.product-container::-webkit-scrollbar {
+    display: none;
+}
+
+.product-container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Individual Product Styling */
+.product {
+    min-width: 200px; /* Fixed width for each product */
+    max-width: 200px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box; /* Ensures padding is included in width/height */
+}
+
+.product img {
+    width: 100%;
+    height: 150px; /* Fixed height for images */
+    object-fit: contain; /* Ensures the entire image is visible */
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 0;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Hides overflow text */
+    text-overflow: ellipsis;
+}
+
+/* Optional: Add Hover Effect for Products */
+.product:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-left,
+.scroll-right {
+    margin-left: 10px;
+    margin-right: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-40%);
+    background-color: #e6e6e6; /* Button color */
+    height: 50%;
+    color: black;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons appear above content */
+    display: none; /* Initially hide buttons */
+}
+
+.product-slider:hover .scroll-left,
+.product-slider:hover .scroll-right {
+    display: block; /* Show buttons when hovering over the slider */
+}
+
+.scroll-left {
+    left: 10px; 
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.scroll-right {
+    right: 10px; 
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
